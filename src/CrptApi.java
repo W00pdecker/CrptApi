@@ -78,7 +78,7 @@ public class CrptApi {
         @JsonProperty("production_type")
         public String productionType;
         @JsonProperty("products")
-        public ArrayList<Product> products = new ArrayList<>();
+        public ArrayList<Product> products = new ArrayList<>(); // инициализируется здесь, чтобы избежать NullPointerException
         @JsonProperty("reg_date")
         public String regDate;
         @JsonProperty("reg_number")
@@ -110,7 +110,6 @@ public class CrptApi {
         @JsonProperty("uitu_code")
         public String uituCode;
 
-        // Add getters, setters, and other necessary methods
     }
 
     public void shutdown() {
@@ -136,20 +135,20 @@ public class CrptApi {
         doc.ownerInn = "owner_inn_value";
         doc.participantInn = "participant_inn_value";
         doc.producerInn = "producer_inn_value";
-        doc.productionDate = "2024-05-26";
+        doc.productionDate = "2020-01-23";
         doc.productionType = "type_value";
         Product product = new Product();
         product.certificateDocument = "doc";
-        product.certificateDocumentDate = "2024-05-26";
+        product.certificateDocumentDate = "2020-01-23";
         product.certificateDocumentNumber = "123";
         product.ownerInn = "owner_inn";
         product.producerInn = "producer_inn";
-        product.productionDate = "2024-05-26";
+        product.productionDate = "2020-01-23";
         product.tnvedCode = "tnved";
         product.uitCode = "uit";
         product.uituCode = "uitu";
         doc.products.add(product);
-        doc.regDate = "2024-05-26";
+        doc.regDate = "2020-01-23";
         doc.regNumber = "reg_number";
 
         try {
